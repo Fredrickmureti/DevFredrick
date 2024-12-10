@@ -12,6 +12,17 @@ export const metadata: Metadata = {
   title: 'DevFredrick | Full-Stack Developer',
   description: 'Expert in React Native, TypeScript, Node.js, and more. Building exceptional digital experiences.',
   keywords: 'React Native, TypeScript, JavaScript, Full-Stack Developer, Web Development, Mobile Development',
+  authors: [{ name: 'DevFredrick' }],
+  viewport: 'width=device-width, initial-scale=1',
+  robots: 'index, follow',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://your-domain.com',
+    title: 'DevFredrick | Full-Stack Developer',
+    description: 'Expert in React Native, TypeScript, Node.js, and more.',
+    siteName: 'DevFredrick Portfolio'
+  }
 };
 
 export default function RootLayout({
