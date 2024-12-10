@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github, Star } from 'lucide-react';
 import Image from 'next/image';
-import { Tilt } from 'react-tilt';
+import Tilt from 'react-parallax-tilt';
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode, Key } from 'react';
 
 interface ProjectProps {
@@ -95,11 +95,10 @@ const ProjectCard = ({ title, description, image, tags, demoUrl, githubUrl, feat
       className={featured ? 'md:col-span-2 lg:col-span-1' : ''}
     >
       <Tilt
-        options={{
-          max: 15,
-          scale: 1.02,
-          speed: 300
-        }}
+        tiltMaxAngleX={15}
+        tiltMaxAngleY={15}
+        scale={1.02}
+        transitionSpeed={300}
         className="h-full"
       >
         <Card className="overflow-hidden flex flex-col h-full bg-card/50 backdrop-blur-sm hover:shadow-xl transition-all duration-300">
