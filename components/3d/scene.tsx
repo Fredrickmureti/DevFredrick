@@ -4,9 +4,10 @@ import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Sphere, MeshDistortMaterial } from '@react-three/drei';
 import { useSpring, animated } from '@react-spring/three';
+import { Mesh } from 'three';
 
 export default function Scene() {
-  const sphereRef = useRef();
+  const sphereRef = useRef<Mesh>(null);
   const AnimatedSphere = animated(Sphere);
 
   const { scale } = useSpring({
@@ -16,8 +17,15 @@ export default function Scene() {
   });
 
   useFrame((state) => {
-    const time = state.clock.getElapsedTime();
-    sphereRef.current.position.y = Math.sin(time) * 0.1;
+    // Option 1: Null check
+    if (sphereRef.current) {
+      const time = state.clock.getElapsedTime();
+      sphereRef.current.position.y = Math.sin(time) * 0.1;
+    }
+
+    // Alternative Option 2: Non-null assertion (use cautiously)
+    // const time = state.clock.getElapsedTime();
+    // sphereRef.current!.position.y = Math.sin(time) * 0.1;
   });
 
   return (
