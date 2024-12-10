@@ -35,6 +35,7 @@ const Footer = () => {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit GitHub Profile"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Github className="h-5 w-5" />
@@ -43,6 +44,7 @@ const Footer = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit LinkedIn Profile"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
