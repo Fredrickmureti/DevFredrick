@@ -4,6 +4,15 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 
+interface Education {
+  degree: string;
+  school: string;
+  location: string;
+  period: string;
+  description: string;
+  achievements: string[];
+}
+
 const education = [
   {
     degree: "Master of Science in Computer Science",
@@ -31,7 +40,7 @@ const education = [
   }
 ];
 
-const EducationCard = ({ degree, school, location, period, description, achievements }: any) => (
+const EducationCard = ({ degree, school, location, period, description, achievements }: Education) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +66,7 @@ const EducationCard = ({ degree, school, location, period, description, achievem
           </div>
           <p className="text-muted-foreground mb-4">{description}</p>
           <ul className="space-y-2">
-            {achievements.map((achievement, index) => (
+            {achievements.map((achievement: string, index: number) => (
               <li key={index} className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                 <span className="text-sm">{achievement}</span>

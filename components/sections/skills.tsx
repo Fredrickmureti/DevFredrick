@@ -37,7 +37,12 @@ const skills = {
   ]
 };
 
-const SkillBar = ({ name, level }) => {
+interface Skill {
+  name: string;
+  level: number;
+}
+
+const SkillBar = ({ name, level }: Skill) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1

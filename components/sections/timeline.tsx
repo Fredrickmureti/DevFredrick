@@ -4,6 +4,15 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Briefcase, GraduationCap, Award, Calendar } from 'lucide-react';
 
+interface TimelineEventProps {
+  year: string;
+  title: string;
+  company: string;
+  description: string;
+  icon: React.ElementType;
+  type: 'work' | 'education' | 'achievement';
+}
+
 const timelineEvents = [
   {
     year: '2024',
@@ -47,7 +56,7 @@ const timelineEvents = [
   }
 ];
 
-const TimelineEvent = ({ year, title, company, description, icon: Icon, type }) => {
+const TimelineEvent = ({ year, title, company, description, icon: Icon, type }: TimelineEventProps) => {
   const getTypeStyles = () => {
     switch (type) {
       case 'work':
