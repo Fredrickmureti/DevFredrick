@@ -37,7 +37,7 @@ const blogPosts = [
   }
 ];
 
-const BlogCard = ({ title, excerpt, image, date, readTime, category, gradient }) => (
+const BlogCard = ({ title, excerpt, image, date, readTime, category, gradient }: any) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}

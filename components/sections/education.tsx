@@ -31,7 +31,7 @@ const education = [
   }
 ];
 
-const EducationCard = ({ degree, school, location, period, description, achievements }) => (
+const EducationCard = ({ degree, school, location, period, description, achievements }: any) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}

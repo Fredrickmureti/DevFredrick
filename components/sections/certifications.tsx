@@ -33,7 +33,7 @@ const certifications = [
   }
 ];
 
-const CertificationCard = ({ title, organization, date, logo, credentialUrl, description }) => (
+const CertificationCard = ({ title, organization, date, logo, credentialUrl, description }: any) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
