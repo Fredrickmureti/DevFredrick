@@ -4,7 +4,14 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Award, Code, Users, Star } from 'lucide-react';
 
-const achievements = [
+interface AchievementProps {
+  icon: React.ElementType;
+  value: string;
+  label: string;
+  gradient: string;
+}
+
+const achievements: AchievementProps[] = [
   {
     icon: Code,
     value: '500+',
@@ -31,7 +38,7 @@ const achievements = [
   }
 ];
 
-const AchievementCard = ({ icon: Icon, value, label, gradient }: any) => (
+const AchievementCard = ({ icon: Icon, value, label, gradient }: AchievementProps) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.9 }}
     whileInView={{ opacity: 1, scale: 1 }}

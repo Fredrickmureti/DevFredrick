@@ -13,7 +13,7 @@ interface TimelineEventProps {
   type: 'work' | 'education' | 'achievement';
 }
 
-const timelineEvents = [
+const timelineEvents: TimelineEventProps[] = [
   {
     year: '2024',
     title: 'Senior Software Engineer',

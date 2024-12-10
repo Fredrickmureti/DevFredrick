@@ -6,7 +6,16 @@ import { Award, Calendar, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
-const certifications = [
+interface CertificationProps {
+  title: string;
+  organization: string;
+  date: string;
+  logo: string;
+  credentialUrl: string;
+  description: string;
+}
+
+const certifications: CertificationProps[] = [
   {
     title: "AWS Certified Solutions Architect Professional",
     organization: "Amazon Web Services",
@@ -33,7 +42,7 @@ const certifications = [
   }
 ];
 
-const CertificationCard = ({ title, organization, date, logo, credentialUrl, description }: any) => (
+const CertificationCard = ({ title, organization, date, logo, credentialUrl, description }: CertificationProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}

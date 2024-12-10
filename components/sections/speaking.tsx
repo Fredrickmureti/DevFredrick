@@ -6,7 +6,19 @@ import { Mic, Calendar, MapPin, Users, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
-const events = [
+interface EventProps {
+  title: string;
+  event: string;
+  location: string;
+  date: string;
+  image: string;
+  audience: string;
+  description: string;
+  videoUrl: string;
+  slidesUrl: string;
+}
+
+const events: EventProps[] = [
   {
     title: "Modern Web Development with Next.js",
     event: "TechConf 2024",
@@ -42,7 +54,7 @@ const events = [
   }
 ];
 
-const EventCard = ({ title, event, location, date, image, audience, description, videoUrl, slidesUrl }) => (
+const EventCard = ({ title, event, location, date, image, audience, description, videoUrl, slidesUrl }: EventProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}

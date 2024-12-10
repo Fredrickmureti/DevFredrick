@@ -6,7 +6,14 @@ import { Avatar } from '@/components/ui/avatar';
 import { Quote } from 'lucide-react';
 import Image from 'next/image';
 
-const testimonials = [
+interface TestimonialProps {
+  name: string;
+  role: string;
+  image: string;
+  content: string;
+}
+
+const testimonials: TestimonialProps[] = [
   {
     name: 'Sarah Johnson',
     role: 'CTO at TechCorp',
@@ -27,7 +34,7 @@ const testimonials = [
   }
 ];
 
-const TestimonialCard = ({ name, role, image, content }) => (
+const TestimonialCard = ({ name, role, image, content }: TestimonialProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}

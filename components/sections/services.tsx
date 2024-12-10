@@ -19,7 +19,14 @@ import {
 } from 'lucide-react';
 import { Tilt } from 'react-tilt';
 
-const services = [
+interface ServiceProps {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  gradient: string;
+}
+
+const services: ServiceProps[] = [
   {
     icon: Smartphone,
     title: 'Mobile Development',
@@ -94,7 +101,7 @@ const services = [
   }
 ];
 
-const ServiceCard = ({ icon: Icon, title, description, gradient }) => {
+const ServiceCard = ({ icon: Icon, title, description, gradient }: ServiceProps) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1

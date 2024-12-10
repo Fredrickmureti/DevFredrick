@@ -7,7 +7,18 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 
-const researchProjects = [
+interface ResearchProps {
+  title: string;
+  period: string;
+  image: string;
+  description: string;
+  status: 'Ongoing' | 'Completed';
+  technologies: string[];
+  achievements: string[];
+  githubUrl: string;
+}
+
+const researchProjects: ResearchProps[] = [
   {
     title: "AI-Powered Code Generation",
     period: "2023 - Present",
@@ -38,7 +49,7 @@ const researchProjects = [
   }
 ];
 
-const ResearchCard = ({ title, period, image, description, status, technologies, achievements, githubUrl }) => (
+const ResearchCard = ({ title, period, image, description, status, technologies, achievements, githubUrl }: ResearchProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}

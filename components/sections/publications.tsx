@@ -6,7 +6,19 @@ import { Book, Calendar, ExternalLink, FileText, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
-const publications = [
+interface PublicationProps {
+  title: string;
+  journal?: string;
+  conference?: string;
+  date: string;
+  citations: number;
+  type: 'Journal' | 'Conference';
+  abstract: string;
+  doi: string;
+  tags: string[];
+}
+
+const publications: PublicationProps[] = [
   {
     title: "Deep Learning Approaches in Mobile App Development",
     journal: "IEEE Software Engineering Journal",
@@ -39,7 +51,7 @@ const publications = [
   }
 ];
 
-const PublicationCard = ({ title, journal, conference, date, citations, type, abstract, doi, tags }) => (
+const PublicationCard = ({ title, journal, conference, date, citations, type, abstract, doi, tags }: PublicationProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}

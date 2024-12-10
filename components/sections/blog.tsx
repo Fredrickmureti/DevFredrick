@@ -7,7 +7,17 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Tilt } from 'react-tilt';
 
-const blogPosts = [
+interface BlogPostProps {
+  title: string;
+  excerpt: string;
+  image: string;
+  date: string;
+  readTime: string;
+  category: string;
+  gradient: string;
+}
+
+const blogPosts: BlogPostProps[] = [
   {
     title: 'Building Scalable Microservices with Node.js',
     excerpt: 'Learn how to design and implement scalable microservices architecture using Node.js and Docker.',
@@ -37,7 +47,7 @@ const blogPosts = [
   }
 ];
 
-const BlogCard = ({ title, excerpt, image, date, readTime, category, gradient }: any) => (
+const BlogCard = ({ title, excerpt, image, date, readTime, category, gradient }: BlogPostProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}

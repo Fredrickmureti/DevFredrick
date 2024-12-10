@@ -9,7 +9,18 @@ import Image from 'next/image';
 import { Tilt } from 'react-tilt';
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode, Key } from 'react';
 
-const projects = [
+interface ProjectProps {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  demoUrl: string;
+  githubUrl: string;
+  featured?: boolean;
+  stars: number;
+}
+
+const projects: ProjectProps[] = [
   {
     title: 'E-Commerce Mobile App',
     description: 'A full-featured e-commerce mobile application built with React Native and Node.js. Includes features like product search, cart management, and secure payments.',
@@ -69,7 +80,7 @@ const projects = [
   }
 ];
 
-const ProjectCard = ({ title, description, image, tags, demoUrl, githubUrl, featured, stars }: any) => {
+const ProjectCard = ({ title, description, image, tags, demoUrl, githubUrl, featured, stars }: ProjectProps) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
