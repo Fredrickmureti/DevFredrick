@@ -9,7 +9,7 @@ import Footer from '@/components/footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Full-Stack Developer',
+  title: 'DevFredrick | Full-Stack Developer',
   description: 'Expert in React Native, TypeScript, Node.js, and more. Building exceptional digital experiences.',
   keywords: 'React Native, TypeScript, JavaScript, Full-Stack Developer, Web Development, Mobile Development',
 };
